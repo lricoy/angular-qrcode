@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { SharedService } from './shared.service';
+import { ApiService } from './api.service';
 
-describe('SharedService', () => {
+describe('ApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SharedService]
+      providers: [ApiService]
     });
   });
 
-  it('should be created', inject([SharedService], (service: SharedService) => {
+  it('should be created', inject([ApiService], (service: ApiService) => {
     expect(service).toBeTruthy();
   }));
 });

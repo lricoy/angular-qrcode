@@ -1,22 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { HttpModule } from "@angular/http";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
 
-
-import { AppComponent } from './app.component';
-import { SharedComponent } from './shared/shared.component';
-import { QrcodeComponent } from './qrcode/qrcode.component';
-
+import { QrcodeComponent } from "./qrcode/qrcode.component";
+import { ApiService } from "./shared/services/api.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SharedComponent,
-    QrcodeComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
+  declarations: [AppComponent, QrcodeComponent],
+  imports: [BrowserModule, HttpModule],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

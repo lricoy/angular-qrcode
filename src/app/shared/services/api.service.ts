@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Headers, Http, Response, URLSearchParams } from "@angular/http";
+import { Http, Response, URLSearchParams } from "@angular/http";
 
 import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs/Rx";
@@ -10,8 +10,8 @@ import "rxjs/add/operator/catch";
 export class ApiService {
   constructor(private http: Http) {}
 
-  private setHeaders(): Headers {
-    const headersConfig = {
+  private setHeaders(): any {
+    return {
       "Content-Type": "application/json",
       Accept: "application/json"
     };
@@ -49,7 +49,7 @@ export class ApiService {
         headers: this.setHeaders()
       })
       .catch(this.formatErrors)
-      .map((res: Response) => res.json());
+      .map((res: Response) => res.json()));
   }
 
   delete(path): Observable<any> {
