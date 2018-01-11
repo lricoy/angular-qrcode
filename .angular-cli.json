@@ -7,6 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
+
       "assets": [
         "assets",
         "favicon.ico"
@@ -19,6 +20,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+
         "styles.css"
       ],
       "scripts": [],
