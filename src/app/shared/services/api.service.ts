@@ -12,6 +12,7 @@ export class ApiService {
 
   private setHeaders(): any {
     return {
+      "Access-Control-Allow-Origin":'*',
       "Content-Type": "application/json",
       Accept: "application/json"
     };
