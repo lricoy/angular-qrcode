@@ -1,21 +1,23 @@
 import { Injectable } from "@angular/core";
-import { Http, Response, URLSearchParams } from "@angular/http";
+import { Http, Response, URLSearchParams,Headers } from "@angular/http";
 
 import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 
+
 @Injectable()
 export class ApiService {
   constructor(private http: Http) {}
 
-  private setHeaders(): any {
-    return {
-      "Access-Control-Allow-Origin":'*',
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    };
+  private setHeaders(): Headers {
+    let  h = new Headers();
+    h.append("Access-Control-Allow-Origin",'*');
+    h.append("Content-Type","application/json");
+    h.append("Accept", "application/json");
+    return h;
+
   }
 
   private formatErrors(error: any) {
