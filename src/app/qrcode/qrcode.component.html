@@ -1,9 +1,4 @@
-<div class="box container">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-128x128">
-        <img src="{{qrcode?.src}}" alt="Scan me!" height="240" width="240">
-      </figure>
-    </div>
-  </article>
+<div class="box container qrcode-container">
+  <h1>Scan the QRCode below to access the app</h1>
+  <img class="qrcode" [src]="qrcode?.src" alt="Scan me!" width="240px" height="240px">
 </div>
