@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-
 import { ApiService } from "./../shared/services/api.service";
 import * as uuid from "uuid/v4";
 
@@ -9,17 +8,14 @@ import * as uuid from "uuid/v4";
   styleUrls: ["./qrcode.component.css"]
 })
 export class QrcodeComponent implements OnInit {
-  qrcode: any;
-  qr(params: any) {
-    this.qrcode = params;
-  }
-
-
+  private qrcode: any;
 
   constructor(private api: ApiService) {}
 
   getQrcode(): void {
-    this.api.post("/", { payload: uuid() }).subscribe(s => this.qr(s));
+    this.api.post("/", { payload: uuid() }).subscribe(dataUrl => {
+      this.qrcode = dataUrl;
+    });
   }
 
   ngOnInit() {
